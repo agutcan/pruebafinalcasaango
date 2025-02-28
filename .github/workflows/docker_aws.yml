@@ -62,5 +62,6 @@ jobs:
             docker compose down api
             docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
             docker compose up -d traefik db whoami 
+            sleep 2
             docker compose up -d api
 
